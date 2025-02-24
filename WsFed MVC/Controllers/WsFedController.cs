@@ -22,12 +22,14 @@ public class WsFedController : Controller
     }
 
     [Route("Logout")]
-    public async Task<IActionResult> Logout()
+    public async Task<IActionResult> Logout(int cleanup = 0)
     {
         await HttpContext.SignOutAsync();
-        var idpLogoutOutUrl = Configuration["auth:wsfed:IdPLogoutUrl"]!;
+        var tenant = Configuration["auth:wsfed:Tenant"]!;
+        var appid = Configuration["auth:wsfed:AppId"]!;
+        var waparameter = cleanup == 0 ? "wsignout1.0" : "wsignoutcleanup1.0";
         var postLogoutRedirect = $"{Request.Scheme}://{Request.Host}/Home/Index";
-        var logoutUrl = $"{idpLogoutOutUrl}&wreply={Uri.EscapeDataString(postLogoutRedirect)}";
+        var logoutUrl = $"https://localhost:44303/WsFed/{tenant}/{appid}?wa={waparameter}&wreply={Uri.EscapeDataString(postLogoutRedirect)}";
         return Redirect(logoutUrl);
     }
 }
