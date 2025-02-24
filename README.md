@@ -13,7 +13,8 @@ Open your web application in Visual Studio and open the file `appsettings.json` 
 - replace the value for `Wtrealm` with the same _Realm_ from CFS (`https://cfs-master:44303`);
 - replace the value for `IdPMetadata` with the _Metadata URL_ from CFS (
   `https://cfs-master:44303/FederationMetadata/{tenant}/{appid}/FederationMetadata.xml`);
-- replace the values for tenant and application id in `IdPLogoutUrl` with your _Tenant Name_ and _Application ID_ from CFS (`https://localhost:44303/WsFed/{tenant}/{appid}?wa=wsignout1.0`). Here is important to keep the value for the `wa` query parameter as `wsignout1.0` for the Single Sign Out to be working properly.
+- replace the value for `Tenant` with the _Tenant Name_ from CFS;
+- replace the value for `AppId` with the _Application ID_ from CFS.
 
 ![CFS OAuth application](WsFed%20MVC/Docs/Resources/Images/cfs-wsfed-application.png)
 
@@ -27,7 +28,8 @@ editor (_Notepad_). Locate the `auth:wsfed` section.
 - replace the value for `Wtrealm` with the same _Realm_ from CFS (`https://cfs-master:44303`);
 - replace the value for `IdPMetadata` with the _Metadata URL_ from CFS (
   `https://cfs-master:44303/FederationMetadata/{tenant}/{appid}/FederationMetadata.xml`);
-- replace the values for tenant and application id in `IdPLogoutUrl` with your _Tenant Name_ and _Application ID_ from CFS (`https://localhost:44303/WsFed/{tenant}/{appid}?wa=wsignout1.0`). Here is important to keep the value for the `wa` query parameter as `wsignout1.0` for the Single Sign Out to be working properly.
+- replace the value for `Tenant` with the _Tenant Name_ from CFS;
+- replace the value for `AppId` with the _Application ID_ from CFS.
 
 Open Internet Information Services (IIS) Manager. Right click on _Sites_ and select _Add Website_.
 
