@@ -28,8 +28,9 @@ public class WsFedController : Controller
         var tenant = Configuration["auth:wsfed:Tenant"]!;
         var appid = Configuration["auth:wsfed:AppId"]!;
         var waparameter = cleanup == 0 ? "wsignout1.0" : "wsignoutcleanup1.0";
-        var postLogoutRedirect = $"{Request.Scheme}://{Request.Host}/Home/Index";
-        var logoutUrl = $"https://localhost:44303/WsFed/{tenant}/{appid}?wa={waparameter}&wreply={Uri.EscapeDataString(postLogoutRedirect)}";
+        var postLogoutRedirect = Configuration["auth:wsfed:PostLogoutRedirect"]!;
+        var idpHost = Configuration["auth:wsfed:IdpHost"]!;
+        var logoutUrl = $"{idpHost}/WsFed/{tenant}/{appid}?wa={waparameter}&wreply={Uri.EscapeDataString(postLogoutRedirect)}";
         return Redirect(logoutUrl);
     }
 }
