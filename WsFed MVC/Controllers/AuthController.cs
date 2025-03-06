@@ -5,12 +5,12 @@ using Microsoft.AspNetCore.Mvc;
 namespace WsFed_MVC.Controllers;
 
 [AllowAnonymous]
-[Route("WsFed")]
-public class WsFedController : Controller
+[Route("Auth")]
+public class AuthController : Controller
 {
     private IConfiguration Configuration { get; }
 
-    public WsFedController(IConfiguration configuration)
+    public AuthController(IConfiguration configuration)
     {
         Configuration = configuration;
     }
