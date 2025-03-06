@@ -14,7 +14,9 @@ Open your web application in Visual Studio and open the file `appsettings.json` 
 - replace the value for `IdPMetadata` with the _Metadata URL_ from CFS (
   `https://cfs-master:44303/FederationMetadata/{tenant}/{appid}/FederationMetadata.xml`);
 - replace the value for `Tenant` with the _Tenant Name_ from CFS;
-- replace the value for `AppId` with the _Application ID_ from CFS.
+- replace the value for `AppId` with the _Application ID_ from CFS;
+- replace the value for `IdPHost` with the _CFS URL_ (`https://cfs-master:44303`);
+- replace the value for `PostLogoutRedirect` with the URL the user should be redirected to after logout (`https://myapp:44310/Home/Index`).
 
 ![CFS OAuth application](WsFed%20MVC/Docs/Resources/Images/cfs-wsfed-application.png)
 
@@ -29,7 +31,9 @@ editor (_Notepad_). Locate the `auth:wsfed` section.
 - replace the value for `IdPMetadata` with the _Metadata URL_ from CFS (
   `https://cfs-master:44303/FederationMetadata/{tenant}/{appid}/FederationMetadata.xml`);
 - replace the value for `Tenant` with the _Tenant Name_ from CFS;
-- replace the value for `AppId` with the _Application ID_ from CFS.
+- replace the value for `AppId` with the _Application ID_ from CFS;
+- replace the value for `IdPHost` with the _CFS URL_ (`https://cfs-master:44303`);
+- replace the value for `PostLogoutRedirect` with the URL the user should be redirected to after logout (`https://myapp:44310/Home/Index`).
 
 Open Internet Information Services (IIS) Manager. Right click on _Sites_ and select _Add Website_.
 
